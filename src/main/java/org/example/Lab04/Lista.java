@@ -97,14 +97,14 @@ public class Lista {
     }
 
     //Opción 7 Mostrar un solo estudiante por la posición de la lista
-    public String getStudentFromPosition(int position) {
+    public Estudiante getStudentFromPosition(int position) {
         int counter = 0;
         Estudiante student = cabeza;
         while (counter < position) {
             student = student.obtenerSiguiente();
             counter++;
         }
-        return student.obtenerValor();
+        return student;
     }
 
     //Opcion 8 Modificar datos de un estudiante
@@ -173,6 +173,8 @@ public class Lista {
         cabeza = cabeza.obtenerSiguiente();
         size--;
     }
+
+
 
 
 }

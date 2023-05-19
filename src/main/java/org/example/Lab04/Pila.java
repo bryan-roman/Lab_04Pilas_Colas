@@ -1,31 +1,22 @@
-//package org.example.Lab04;
-//
-//public class Pila {
-//    private char[] data;
-//
-//    public Pila(int tamano) {
-//        idx = 0;
-//        data = new char[tamano];
-//    }
-//
-//    public void push(char c) {
-//        data[idx] = c;
-//        idx++;
-//    }
-//
-//    public char pop() {
-//        //Requiere: la pila no esté vacía
-//
-//        idx--;
-//        return data[idx];
-//    }
-//
-//    public boolean full() {
-//        return idx == data.length;
-//    }
-//
-//    public boolean empty() {
-//        return idx == 0;
-//    }
-//
-//}
+package org.example.Lab04;
+
+public class Pila extends Lista{
+    Lista lista;
+    public Pila(Lista lista){
+        this.lista=lista;
+    }
+    public void push(String ID, String name, String career, int credits, char gender){
+        lista.addFirst(ID, name, career, credits, gender);
+    }
+
+    public Estudiante pop(){
+        Estudiante tmp= lista.cabeza;
+          lista.deleteFirst();
+        return tmp;
+    }
+
+    public Estudiante top(){
+        return lista.cabeza;
+    }
+
+}
