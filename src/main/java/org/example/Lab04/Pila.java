@@ -14,9 +14,7 @@ public class Pila extends Lista{
           lista.deleteFirst();
         return tmp;
     }
-
     public Estudiante top(){
         return lista.cabeza;
     }
-
 }
