@@ -1,23 +1,22 @@
 package org.example.Lab04;
 
 public class Cola extends Lista {
-    Lista lista;
+    Lista listaCola = new Lista();
 
-    public Cola(Lista lista) {
-        this.lista = lista;
+    public Cola(Lista listaCola) {
+        this.listaCola = listaCola;
     }
 
     public void enqueue(String ID, String name, String career, int credits, char gender) {
-        lista.addFirst(ID, name, career, credits, gender);
+        listaCola.addFirst(ID, name, career, credits, gender);
     }
 
     public Estudiante dequeue() {
-        Estudiante tmp = lista.getStudentFromPosition(lista.sizeList()-1);
-        lista.deleteSpecific(lista.sizeList()-1);
+        Estudiante tmp = listaCola.getStudentFromPosition(listaCola.sizeList()-1);
+        listaCola.deleteSpecific(listaCola.sizeList()-1);
         return tmp;
     }
-
     public Estudiante top() {
-        return lista.cabeza;
+        return listaCola.cabeza;
     }
 }

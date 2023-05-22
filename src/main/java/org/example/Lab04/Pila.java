@@ -1,20 +1,20 @@
 package org.example.Lab04;
 
 public class Pila extends Lista{
-    Lista lista;
+    Lista listaPila = new Lista();
     public Pila(Lista lista){
-        this.lista=lista;
+        this.listaPila =lista;
     }
     public void push(String ID, String name, String career, int credits, char gender){
-        lista.addFirst(ID, name, career, credits, gender);
+        listaPila.addFirst(ID, name, career, credits, gender);
     }
 
     public Estudiante pop(){
-        Estudiante tmp= lista.cabeza;
-          lista.deleteFirst();
+        Estudiante tmp= listaPila.cabeza;
+          listaPila.deleteFirst();
         return tmp;
     }
     public Estudiante top(){
-        return lista.cabeza;
+        return listaPila.cabeza;
     }
 }

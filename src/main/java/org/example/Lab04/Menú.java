@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class Menú {
 
     Lista lista = new Lista();
+    Lista listaColas = new Lista();
     Scanner scanner = new Scanner(System.in);
     String ID, name, career;
     int credits;
     char gender;
 
     Pila pila = new Pila(lista);
-    Cola cola = new Cola(lista);
+    Cola cola = new Cola(listaColas);
 
 
     public void mainMenu() {
@@ -81,6 +82,7 @@ public class Menú {
                     break;
 
                 case 5:
+                    lista=null;
                     mainMenu();
                     break;
             }
@@ -89,7 +91,7 @@ public class Menú {
     }
 
     public void menuColas() {
-        System.out.println("Seleccione una operación de la pila: \n" +
+        System.out.println("Seleccione una operación de la cola: \n" +
                 "1) Enqueue \n" +
                 "2) Top \n" +
                 "3) Dequeue \n" +
@@ -126,11 +128,12 @@ public class Menú {
                     break;
                 case 4:
                     System.out.println("La lista de estudiantes es: ");
-                    System.out.println(lista.showList());
+                    System.out.println(listaColas.showList());
                     menuColas();
                     break;
 
                 case 5:
+                    listaColas=null;
                     mainMenu();
                     break;
             }
